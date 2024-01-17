@@ -8,9 +8,15 @@
  */
 function trimProperties(obj) {
   // ✨ implement
-  Object.keys(obj).forEach(key => obj[key] = obj[key].trim())
-  console.log(obj)
-  return obj
+  console.log("this is the obj in trimProperties:", obj)
+  const copy = {...obj}
+  console.log("this is the copy in trimProperties:", copy)
+  // const newObj = Object.keys(copy).forEach(key => copy[key] = copy[key].trim())
+  Object.keys(copy).forEach(key => copy[key] = copy[key].trim())
+
+  // console.log(obj)
+  // console.log(newObj)
+  return copy
 }
 
 /**

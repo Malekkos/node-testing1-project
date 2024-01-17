@@ -15,7 +15,13 @@ describe('[Exercise 1] trimProperties', () => {
     expect(trimmedObject).toEqual(actual)
     expect(trimmedObject.name).toHaveLength(9)
   })
-  // test('[2] returns a copy, leaving the original object intact', () => {})
+  test('[2] returns a copy, leaving the original object intact', () => {
+    const toBeTrimmed = { name: "  Mary Anne", gender: "         female"}
+    const trimmedObject = utils.trimProperties(toBeTrimmed)
+    const actual = { name: "Mary Anne", gender: "female"}
+    expect(trimmedObject).not.toBe(actual)
+    expect(toBeTrimmed.name).toHaveLength(11)
+  })
 })
 
 describe('[Exercise 2] trimPropertiesMutation', () => {
