@@ -26,11 +26,19 @@ describe('[Exercise 2] trimPropertiesMutation', () => {
     expect(trimmedObject).toEqual(actual)
     expect(trimmedObject.name).toEqual(expect.stringContaining("Joseph"))
   })
-  // test('[4] the object returned is the exact same one we passed in', () => {})
+  test('[4] the object returned is the exact same one we passed in', () => {
+    const toBeTrimmed = { name: "      Childish Gambino  ", occupation: "Janitor "}
+    const trimmedObject = utils.trimPropertiesMutation(toBeTrimmed)
+    expect(trimmedObject).toBe(toBeTrimmed) //They are the same object
+  })
 })
 
 describe('[Exercise 3] findLargestInteger', () => {
-  // test('[5] returns the largest number in an array of objects { integer: 2 }', () => {})
+  test('[5] returns the largest number in an array of objects { integer: 2 }', () => {
+    const arrOfIntegers = [{integer: 2}, {integer: 22}, {integer: 6}, {integer: 3}]
+    const largestInteger = utils.findLargestInteger(arrOfIntegers)
+    expect(largestInteger).toBe(22)
+  })
 })
 
 describe('[Exercise 4] Counter', () => {
