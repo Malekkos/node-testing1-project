@@ -8,6 +8,9 @@
  */
 function trimProperties(obj) {
   // ✨ implement
+  Object.keys(obj).forEach(key => obj[key] = obj[key].trim())
+  console.log(obj)
+  return obj
 }
 
 /**
