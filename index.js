@@ -109,7 +109,6 @@ class Seasons {
       this.currentSeason = 0
       result = this.seasons[this.currentSeason]
     } else {
-      // let result = this.seasons[this.currentSeason]
       this.currentSeason++
     }
       return result
@@ -193,6 +192,11 @@ class Car {
  */
 function isEvenNumberAsync(number) {
   // ✨ implement
+  if( number % 2 === 0) {
+    return true
+  } else {
+    return false
+  }
 }
 
 module.exports = {
