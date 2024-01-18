@@ -129,6 +129,7 @@ class Car {
     // ✨ initialize whatever other properties are needed
     this.name = name
     this.mpg = mpg
+    this.gasLeft = tankSize
   }
 
   /**
@@ -146,7 +147,10 @@ class Car {
    */
   drive(distance) {
     // ✨ implement
-    console.log(distance)
+    // console.log(distance)
+    // console.log("gasLeft: ", this.gasLeft, "distance:", distance, "mpg:", this.mpg)
+    this.gasLeft = this.gasLeft - (distance / this.mpg)
+    // console.log("gasLeft: ", this.gasLeft)
     return this.odometer = this.odometer + distance
   }
 
