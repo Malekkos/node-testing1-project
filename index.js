@@ -147,11 +147,14 @@ class Car {
    */
   drive(distance) {
     // ✨ implement
-    // console.log(distance)
-    // console.log("gasLeft: ", this.gasLeft, "distance:", distance, "mpg:", this.mpg)
+    if(this.gasLeft - distance/this.mpg < 0) {
+      this.odometer = this.odometer + (this.gasLeft * this.mpg)
+      this.gasLeft = 0
+    } else {
     this.gasLeft = this.gasLeft - (distance / this.mpg)
-    // console.log("gasLeft: ", this.gasLeft)
-    return this.odometer = this.odometer + distance
+    this.odometer = this.odometer + distance
+    }
+    return this.odometer
   }
 
   /**
@@ -167,6 +170,7 @@ class Car {
    */
   refuel(gallons) {
     // ✨ implement
+    this.gasLeft = this.gasLeft + gallons
   }
 }
 
