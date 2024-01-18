@@ -170,7 +170,11 @@ class Car {
    */
   refuel(gallons) {
     // ✨ implement
-    this.gasLeft = this.gasLeft + gallons
+    if (this.gasLeft + gallons > this.tank) {
+      this.gasLeft = this.tank
+    } else {
+      this.gasLeft = this.gasLeft + gallons
+    } 
   }
 }
 
